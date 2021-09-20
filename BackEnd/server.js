@@ -2,7 +2,7 @@ const express = require('express');
 require('dotenv').config({path:'BackEnd/config/.env'});
 const http = require('http');
 const cookieParser = require('cookie-parser');
-const app = require('./config/app');
+const app = require('./app');
 require('./config/dbConfig');
 const userRoutes = require ('./routes/user.routes');
 const sauceRoutes = require('./routes/sauces.routes');
