@@ -3,7 +3,6 @@ require('dotenv').config({path:'BackEnd/config/.env'});
 const http = require('http');
 const cookieParser = require('cookie-parser');
 const app = require('./app');
-require('./config/dbConfig');
 const userRoutes = require ('./routes/user.routes');
 const sauceRoutes = require('./routes/sauces.routes');
 const mongoose = require('mongoose');
@@ -61,6 +60,5 @@ server.on('listening', () => {
 
 server.listen(port);
 
-require('./config/dbConfig');
 
 
