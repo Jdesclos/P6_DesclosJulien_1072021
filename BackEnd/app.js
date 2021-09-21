@@ -13,8 +13,9 @@ mongoose.connect(
   .catch((err) => console.log("connection error:" + err));
 
 app.use(helmet());
+//gestion des accès
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Origin", "*");//toutes les origines sont permises
   res.setHeader(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content, Accept, Content-Type, Authorization"
@@ -26,5 +27,6 @@ app.use((req, res, next) => {
   next();
 });
 app.use('/images', express.static(path.join(__dirname, 'images')))
-
+//Cela indique à Express qu'il faut gérer la ressource images de manière statique
+//(un sous-répertoire de notre répertoire de base, __dirname ) à chaque fois qu'elle reçoit une requête vers la route /images
 module.exports = app;
