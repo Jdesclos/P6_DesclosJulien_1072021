@@ -17,7 +17,7 @@ exports.signup = (req, res, next) => {
 };
 //connection
 exports.login = (req, res, next) => {
-  User.findOne({ email: req.body.email })//on cherche dans la BD vian l'email
+  User.findOne({ email: req.body.email })//on cherche dans la BD via l'email
     .then(user => {
       if (!user) {
         return res.status(401).json({ error: 'Utilisateur non trouvé !' });
